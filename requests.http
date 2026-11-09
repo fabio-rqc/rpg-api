@@ -1,0 +1,29 @@
+### Criar item
+POST http://localhost:8081/api/itens
+Content-Type: application/json
+
+{ "nome": "Espada Flamejante", "raridade": "EPICO", "preco": 1500.00, "nivelMinimo": 20 }
+
+### Listar todos
+GET http://localhost:8081/api/itens
+
+### Filtrar por nome
+GET http://localhost:8081/api/itens?nome=espada
+
+### Buscar por ID
+GET http://localhost:8081/api/itens/1
+
+### Atualizar
+PUT http://localhost:8081/api/itens/1
+Content-Type: application/json
+
+{ "nome": "Espada Flamejante +1", "raridade": "LENDARIO", "preco": 3000.00, "nivelMinimo": 25 }
+
+### Deletar
+DELETE http://localhost:8081/api/itens/1
+
+### Erro 400 (validação)
+POST http://localhost:8081/api/itens
+Content-Type: application/json
+
+{ "nome": "", "preco": -5, "nivelMinimo": 500 }
